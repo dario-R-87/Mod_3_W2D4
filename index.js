@@ -54,6 +54,14 @@ const summ_dest = [
  }
 ];
 
+const day = {
+  url_img: "day.jpg",
+  name: "Paradise",
+  price: "1588 $",
+  description: "Cortina d’Ampezzo è la località di montagna più famosa del Veneto, merito di film, grandi eventi sportivi e di uno dei comprensori sciistici più importanti d’Europa. Molti sono i vip che la scelgono come località di villeggiatura e molti sono quelli che vengono qui sperando di incontrare qualche celebrità del cinema o dello sci, ma questa cittadina mondana e un po’ snob piace anche a chi non ha alcun interesse per aperitivi après ski e club alla moda. Incastonata tra alcune delle cime più maestose e affascinanti di tutto l’arco alpino, Cortina è un gioiello che fa innamorare chiunque ami la montagna. Non a caso viene chiamata la Regina delle Dolomiti, un titolo meritatissimo. Tra i luoghi simbolo delle Dolomiti Ampezzane vanno sicuramente citate le Tofane, tre vette maestose che superano i 3000 metri di altezza, il Passo Giau, teatro di epiche sfide ciclistiche, il massiccio del Sorapiss e la Croda da Lago. - https://www.veneto.info/cosa-vedere-veneto/vacanze-in-montagna-veneto/",
+  date: "18 gennaio 24 - 1 febbraio 24", 
+}
+
 const week_off = document.querySelector("#week__off");
 
 for(let i=0; i<destination.length; i++){
@@ -71,7 +79,6 @@ for(let i=0; i<destination.length; i++){
 </div>
 `;
 }
-//welk__summ
 
 const welc_summ = document.querySelector("#welk__summ");
 
@@ -90,3 +97,23 @@ for(let i=0; i<summ_dest.length; i++){
 </div>
 `;
 }
+
+const day_off = document.querySelector("#day__off");
+
+day_off.innerHTML += `
+<div class="card mb-3"">
+  <div class="row align-items-center g-0">
+    <div class="col-xl-8">
+      <img src="./assets/${day.url_img}" class="w-100 img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-xl-4">
+      <div class="card-body">
+        <h5 class="card-title">${day.name}</h5>
+        <p class="card-text">${day.description}</p>
+        <p class="card-text">${day.date}</p>
+        <p class="card-text"><small class="text-body-secondary">${day.price}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
