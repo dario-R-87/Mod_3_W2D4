@@ -1,7 +1,7 @@
-body{
- min-height: 100vh;
+body {
+  min-height: 100vh;
 }
 
-.shadow{
---bs-box-shadow: 0 0.5rem 1rem rgb(102 225 208 / 65%);
+.shadow {
+  --bs-box-shadow: 0 0.5rem 1rem rgb(102 225 208 / 65%);
 }
