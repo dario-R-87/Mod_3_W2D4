@@ -26,31 +26,37 @@ const summ_dest = [
     url_img: "dest_1.jpg",
     name: "first dest",
     price: "59 $",
+    last_minute: true,
   },
   {
     url_img: "dest_2.jpg",
     name: "second dest",
     price: "344 $",
+    last_minute: false,
   },
   {
     url_img: "dest_3.jpg",
     name: "third dest",
     price: "634 $",
+    last_minute: false,
   },
   {
     url_img: "dest_4.jpg",
     name: "fourth dest",
     price: "888 $",
+    last_minute: true,
   },
   {
     url_img: "dest_5.jpg",
     name: "5-th dest",
     price: "344 $",
+    last_minute: false,
   },
   {
     url_img: "dest_6.jpg",
     name: "6-th dest",
     price: "865 $",
+    last_minute: true,
   },
 ];
 
@@ -118,3 +124,23 @@ day_off.innerHTML += `
   </div>
 </div>
 `;
+
+const last = document.querySelector("#last__minute");
+
+for (let i = 0; i < summ_dest.length; i++) {
+  if (summ_dest[i].last_minute) {
+    last.innerHTML += `
+  <div class="col-6 col-md-4">
+ <div class="card mt-4">
+    <div class="ratio ratio-16x9"><img src='./assets/${summ_dest[i].url_img}' class="card-img-top mt-2" alt="album image" /></div>
+    <div class="card-body">
+     <h5 class="text-truncate card-title">${summ_dest[i].name}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+     <li class="list-group-item">${summ_dest[i].price}</li>
+    </ul>
+  </div>
+</div>
+`;
+  }
+}
