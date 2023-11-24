@@ -85,7 +85,7 @@ const welc_summ = document.querySelector("#welk__summ");
 for(let i=0; i<summ_dest.length; i++){
  welk__summ.innerHTML += `
   <div class="col-6 col-md-4 col-lg-2">
- <div class="card mt-4 ">
+ <div class="card mt-4 shadow">
     <div class="ratio ratio-16x9"><img src='./assets/${summ_dest[i].url_img}' class="card-img-top mt-2" alt="album image" /></div>
     <div class="card-body">
      <h5 class="text-truncate card-title">${summ_dest[i].name}</h5>
