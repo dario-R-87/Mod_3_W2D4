@@ -73,9 +73,13 @@ const week_off = document.querySelector("#week__off");
 
 for (let i = 0; i < destination.length; i++) {
   week_off.innerHTML += `
-  <div class="col-6 col-md-4 col-lg-3">
+  <div class="col-6 col-md-4 col-lg-3 
+  ${i > 2 ? "d-none d-lg-block" : ""}
+  ${i === 2 ? "d-none d-md-block" : ""}">
  <div class="card mt-4 ">
-    <div class="ratio ratio-16x9"><img src='./assets/${destination[i].url_img}' class="card-img-top mt-2" alt="album image" /></div>
+    <div class="ratio ratio-16x9"><img src='./assets/${
+      destination[i].url_img
+    }' class="card-img-top mt-2" alt="album image" /></div>
     <div class="card-body">
      <h5 class="card-title">${destination[i].name}</h5>
     </div>
@@ -91,9 +95,13 @@ const welc_summ = document.querySelector("#welk__summ");
 
 for (let i = 0; i < summ_dest.length; i++) {
   welk__summ.innerHTML += `
-  <div class="col-6 col-md-4 col-lg-2">
+  <div class="col-6 col-md-4 col-lg-2
+  ${i > 2 ? "d-none d-lg-block" : ""}
+  ${i === 2 ? "d-none d-md-block" : ""}">
  <div class="card mt-4 shadow">
-    <div class="ratio ratio-16x9"><img src='./assets/${summ_dest[i].url_img}' class="card-img-top mt-2" alt="album image" /></div>
+    <div class="ratio ratio-16x9"><img src='./assets/${
+      summ_dest[i].url_img
+    }' class="card-img-top mt-2" alt="album image" /></div>
     <div class="card-body">
      <h5 class="text-truncate card-title">${summ_dest[i].name}</h5>
     </div>
@@ -126,13 +134,17 @@ day_off.innerHTML += `
 `;
 
 const last = document.querySelector("#last__minute");
-
+let last_cont = 0;
 for (let i = 0; i < summ_dest.length; i++) {
   if (summ_dest[i].last_minute) {
     last.innerHTML += `
-  <div class="col-6 col-md-4">
+  <div class="col-6 col-md-4
+  ${last_cont > 2 ? "d-none d-lg-block" : ""}
+  ${last_cont === 2 ? "d-none d-md-block" : ""}">
  <div class="card mt-4">
-    <div class="ratio ratio-16x9"><img src='./assets/${summ_dest[i].url_img}' class="card-img-top mt-2" alt="album image" /></div>
+    <div class="ratio ratio-16x9"><img src='./assets/${
+      summ_dest[i].url_img
+    }' class="card-img-top mt-2" alt="album image" /></div>
     <div class="card-body">
      <h5 class="text-truncate card-title">${summ_dest[i].name}</h5>
     </div>
@@ -142,5 +154,6 @@ for (let i = 0; i < summ_dest.length; i++) {
   </div>
 </div>
 `;
+    last_cont++;
   }
 }
