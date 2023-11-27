@@ -69,6 +69,12 @@ const day = {
   date: "18 gennaio 24 - 1 febbraio 24",
 };
 
+const testim_arr = [
+{name:"tizio rossi", msg:"viaggio meraviglioso"},
+{name:"caio bianchi", msg:"assolutamente da fare"},
+{name:"sempronio verdi", msg:"ottima organizzazione e qualità prezzo"},
+];
+
 const week_off = document.querySelector("#week__off");
 
 for (let i = 0; i < destination.length; i++) {
@@ -157,3 +163,12 @@ for (let i = 0; i < summ_dest.length; i++) {
     last_cont++;
   }
 }
+
+const testimonial = document.querySelector(".carousel-inner");
+for(let i = 0; i < testim_arr.length; i++){
+testimonial.innerHTML += `<div class="carousel-item ${i===0 ? 'active' : ''} text-center">
+     <h2>${testim_arr[i].name}</h2>
+     <h3>${testim_arr[i].msg}</h3>
+    </div>`;
+}
+
